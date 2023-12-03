@@ -1,6 +1,6 @@
 import { Parallax } from 'react-parallax';
-import Nasa from '../img/nasa.jpg';
-import logo from '../../src/logo.png';
+import Nasa from '../../img/nasa.jpg';
+import logo from '../../logo.png';
 
 const ImageOne = () => (
     <Parallax
