@@ -1,0 +1,14 @@
+.card{
+    background-color: #29ADB2;
+    color: #F3F3F3;
+    padding: 20px;
+    margin: 32px;
+    align-items: center;
+    display: inline-block;
+    text-align: center;
+    
+}
+
+.title{
+    text-align: center;
+}
