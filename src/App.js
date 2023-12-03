@@ -5,6 +5,7 @@ import {
   Routes
 } from "react-router-dom";
 import Layout from './Component/Layout/Layout';
+import Home from './Component/Home/Home'
 import OurTeam from './Component/OurTeam/OurTeam';
 import Login from './Component/Login/Login';
 import SignUpForm from './Component/SignUpForm/SignUpForm';
@@ -20,6 +21,7 @@ function App() {
        <Footer/>
        </>
       }>  
+       <Route path="/" element={<Home/>}/>
        <Route path="OurTeam" element={<OurTeam/>}/>
        <Route path="Login" element={<Login/>}/> 
        <Route path="SignUpForm" element={<SignUpForm/>}/>   
