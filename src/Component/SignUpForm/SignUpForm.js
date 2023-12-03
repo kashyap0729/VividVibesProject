@@ -13,7 +13,7 @@ function SignUpForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
   try {
-    const requestBody = {
+      const requestBody = {
       fullname:fullname,
       email: email,
       password: password

@@ -91,7 +91,6 @@ div{
     justify-content: space-between;
   }
   
-  /* Optional: Style the individual columns */
   .dropdown-menu ul {
     list-style: none;
     padding: 0;
@@ -99,7 +98,7 @@ div{
   }
   
   .dropdown-menu li {
-    margin-bottom: 0; /* Adjust spacing between items */
+    margin-bottom: 0; 
   }
   
   .dropdown-menu li a {
