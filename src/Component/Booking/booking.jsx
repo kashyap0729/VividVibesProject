@@ -15,13 +15,6 @@ const MyForm = () => {
   const [eventType, setEventType] = useState('');
   const [formErrors, setFormErrors] = useState({});
 
-
-
-  
-
-
-
-
   //validations
   const validateForm = () => {
     const errors = {};

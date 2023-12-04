@@ -10,7 +10,10 @@ import OurTeam from './Component/OurTeam/OurTeam';
 import Login from './Component/Login/Login';
 import SignUpForm from './Component/SignUpForm/SignUpForm';
 import Footer from './Component/Footer/Footer';
+import Parties from './Component/Parties/Parties';
+import Marraiges from './Component/Marraiges/Marraiges';
 import BParty from './Component/BParty/Bparty';
+
 
 function App() {
   return (
@@ -25,13 +28,14 @@ function App() {
        <Route path="/" element={<Home/>}/>
        <Route path="OurTeam" element={<OurTeam/>}/>
        <Route path="Login" element={<Login/>}/> 
-       <Route path="SignUpForm" element={<SignUpForm/>}/>   
-       <Route path="/BParty" element={<BParty/>}/>
-
+       <Route path="SignUpForm" element={<SignUpForm/>}/> 
+       <Route path="Parties" element={<Parties/>}/>  
+       <Route path="Marraiges" element={<Marraiges/>}/>  
+       <Route path="BParty" element={<BParty/>}/>  
      </Route>
    </Routes>
     </Router>
   );
 }
 
-export default App;
+export default App;
