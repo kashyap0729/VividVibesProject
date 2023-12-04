@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
 
+
 const Footer = () => {
   return (
     <>
@@ -9,8 +10,7 @@ const Footer = () => {
                 <div className='row'>
                     <div className='col-md-6 col-lg-5 col-12 ft-1'>
                         <a className='navbar-brand' href="/">Vivid Vibes</a>
-                        <p>Vivid Vibes is an event management company with exemplary vision.
-                            Our mission is to fulfill desires of our clients and convert their dreams into reality.
+                        <p>"Transforming dreams into reality, Vivid Vibes envisions creating unforgettable moments that resonate with the essence of every individual's unique celebration."
                         </p>
                         <div className='footer-icons'>
                             <i class="fa-brands fa-facebook"></i>   

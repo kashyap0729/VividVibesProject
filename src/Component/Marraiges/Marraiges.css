@@ -1,0 +1,34 @@
+.multi-item-carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  
+  .multi-item-carousel .carousel-item .card {
+    flex: 0 0 25%; 
+    margin-right: 10px; 
+  }
+
+  .multi-item-carousel .carousel-item .card img {
+    max-height: 200px; 
+    max-width: 280px;
+  }
+
+  .mar.card{
+    margin-left: 80px;
+    color: #F2EDD0;
+    background-color: #3D7363;
+    border: none;
+  }
+
+  .carousel-control-prev{
+    padding:0;
+    margin:-8px;
+  }
+
+  .carousel-control-next{
+    padding:0;
+    margin: -25px;
+  }
+
+  
