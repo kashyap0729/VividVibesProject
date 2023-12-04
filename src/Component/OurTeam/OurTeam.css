@@ -21,10 +21,12 @@
   }
   
   .team-item:hover{
-    background: #3956de;
+    background: #68A683;
     color: white;
   }
-  
+  h2{
+    padding: 20px;
+  }
   
   .team-item h3{
     margin: 20px 0 1px 0 !important;
@@ -52,7 +54,7 @@
   }
   
   .team-info p{
-    color: #acacac;
+    color: #f9f8f8;
     font-style: italic;
   }
   

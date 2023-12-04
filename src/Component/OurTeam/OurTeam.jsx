@@ -25,7 +25,7 @@ function ourteam(){
                     <h3>VIDHI PATEL</h3>
                     <div className="team-info">
                         <p>Head of CEO</p>
-                        <p>Vidhi is our co-founder and has developed search strategies for a variety of clients from international brands to medium sized businesses for over five years.</p>
+                        <p>Vidhi is our co-founder and has developed search strategies for a variety of clients from international brands to medium sized businesses for over years.</p>
 
                        <ul className="team-icon">
                        <li><a href = "#" className="twitter">

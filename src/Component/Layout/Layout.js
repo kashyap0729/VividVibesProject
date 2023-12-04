@@ -35,7 +35,7 @@ function Layout() {
                             <li><NavDropdown.Item style={{color: 'gray'}} href="#">Misc. Style</NavDropdown.Item></li>      
                         </ul>
                         <ul>
-                           <li><NavDropdown.Item style={{color: '#3d7373', fontWeight:'bold'}}  href="#">Festivals</NavDropdown.Item></li>
+                           <li><NavDropdown.Item style={{color: '#3d7373', fontWeight:'bold'}}  href="/BParty">Festivals</NavDropdown.Item></li>
                            <li><NavDropdown.Item style={{color: 'gray'}} href="#">New Year Events</NavDropdown.Item></li>
                            <li><NavDropdown.Item style={{color: 'gray'}} href="#">Easter Day</NavDropdown.Item></li>
                            <li><NavDropdown.Item style={{color: 'gray'}} href="#">Good Friday</NavDropdown.Item></li>
