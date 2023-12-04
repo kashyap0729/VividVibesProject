@@ -8,10 +8,10 @@
     padding: 5px;
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
     position: relative;
     bottom: 0;
-    width: 100%;
+    width: 100%; 
   }
 
   h6{
