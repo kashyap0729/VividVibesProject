@@ -65,6 +65,9 @@ const userSchema = new mongoose.Schema({
                 message: "Password should contain at least one Special Character",
               },
         ]
+    },
+    profilePicture:{
+      type:String
     }
 });
 
