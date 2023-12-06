@@ -13,7 +13,8 @@ import Footer from './Component/Footer/Footer';
 import Parties from './Component/Parties/Parties';
 import Marraiges from './Component/Marraiges/Marraiges';
 import BParty from './Component/BParty/Bparty';
-
+import UsersForm from './Component/UsersForm/UsersForm';
+import Admin from './Component/Admin/Admin'
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
        <Route path="Parties" element={<Parties/>}/>  
        <Route path="Marraiges" element={<Marraiges/>}/>  
        <Route path="BParty" element={<BParty/>}/>  
+       <Route path ="UsersForm" element={<UsersForm/>}/>
+       <Route path ="Admin" element={<Admin/>}/>
      </Route>
    </Routes>
     </Router>
