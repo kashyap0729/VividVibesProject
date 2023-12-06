@@ -29,7 +29,7 @@ function Layout() {
                     <div className="scrollable-dropdown">
                       <div className="row">
                         <ul>
-                            <li><NavDropdown.Item style={{color: '#3d7373', fontWeight:'bold'}} href="/Marraiges">Marriages</NavDropdown.Item></li>
+                            <li><NavDropdown.Item style={{color: '#3d7373', fontWeight:'bold'}} href="/Marriages">Marriages</NavDropdown.Item></li>
                             <li><NavDropdown.Item style={{color: 'gray'}} href="/UsersForm">Indian Style</NavDropdown.Item></li>
                             <li><NavDropdown.Item style={{color: 'gray'}} href="#">American Style</NavDropdown.Item></li>
                             <li><NavDropdown.Item style={{color: 'gray'}} href="#">Misc. Style</NavDropdown.Item></li>      

@@ -10,8 +10,9 @@ import OurTeam from './Component/OurTeam/OurTeam';
 import Login from './Component/Login/Login';
 import SignUpForm from './Component/SignUpForm/SignUpForm';
 import Footer from './Component/Footer/Footer';
+//import Party from './Component/Party/Party';
 import Parties from './Component/Parties/Parties';
-import Marraiges from './Component/Marraiges/Marraiges';
+import Marriages from './Component/Marriages/Marriages';
 import BParty from './Component/BParty/Bparty';
 import UsersForm from './Component/UsersForm/UsersForm';
 import Admin from './Component/Admin/Admin'
@@ -31,7 +32,7 @@ function App() {
        <Route path="Login" element={<Login/>}/> 
        <Route path="SignUpForm" element={<SignUpForm/>}/> 
        <Route path="Parties" element={<Parties/>}/>  
-       <Route path="Marraiges" element={<Marraiges/>}/>  
+       <Route path="Marriages" element={<Marriages/>}/>  
        <Route path="BParty" element={<BParty/>}/>  
        <Route path ="UsersForm" element={<UsersForm/>}/>
        <Route path ="Admin" element={<Admin/>}/>
