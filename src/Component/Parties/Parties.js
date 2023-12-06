@@ -51,22 +51,22 @@ function Parties() {
           </Carousel.Item>
     </Carousel>
 
-    {/* Card Layout */}
-    <div className="card-container">
-        <Card className='party'>
-          <Card.Img variant="top" src={party4} alt="Card image cap" className='party-top'/>
+    {/*Card Layout */}
+    <div className='card-container1'>
+        <Card className='party-top card-component-1'>
+          <Card.Img className='party-top' variant="top" src={party4} alt="Card image cap" />
           <Card.Body>
-            <Card.Title className='party'>Birthday Parties</Card.Title>
+            <Card.Title className='party-title'>Birthday Parties</Card.Title>
             <Card.Text className='party'>
             Elevate your birthday celebrations with Vivid Vibes! Our expert event management team turns your vision into reality, crafting unforgettable and personalized birthday parties that leave a lasting impression.
             </Card.Text>
             <Button variant="primary">Book Now</Button>
           </Card.Body>
         </Card>
-    <Card className='party'>
-      <Card.Img variant="top" src={anniversary} alt="Card image cap" className='party-top'/>
+    <Card className='party-top card-component-1'>
+      <Card.Img className='party-top' variant="top" src={anniversary} alt="Card image cap" />
       <Card.Body>
-        <Card.Title className='party'>Anniversary Parties</Card.Title>
+        <Card.Title className='party-title'>Anniversary Parties</Card.Title>
         <Card.Text className='party'>
         Celebrate love and milestones with Vivid Vibes! Transform your anniversaries into cherished memories with our dedicated event management team, specializing in crafting unique and romantic experiences tailored to your preferences.
         </Card.Text>
@@ -74,10 +74,10 @@ function Parties() {
       </Card.Body>
     </Card>
 
-    <Card className='party'>
-      <Card.Img variant="top" src={retirement} alt="Card image cap" className='party-top'/>
+    <Card className='party-top card-component-1'>
+      <Card.Img className='party-top' variant="top" src={retirement} alt="Card image cap" />
       <Card.Body>
-        <Card.Title className='party'>Retirement Parties</Card.Title>
+        <Card.Title className='party-title'>Retirement Parties</Card.Title>
         <Card.Text className='party'>
         Bid farewell in style with Vivid Vibes!. Let us create a memorable and heartwarming event as you embark on this new chapter. Our team ensures a personalized touch to honor the retiree and create an unforgettable celebration.
         </Card.Text>
@@ -85,10 +85,10 @@ function Parties() {
       </Card.Body>
     </Card>
 
-    <Card className='party'>
-      <Card.Img variant="top" src={party6} alt="Card image cap" className='party-top'/>
+    <Card className='party-top card-component-1'>
+      <Card.Img className='party-top' variant="top" src={party6} alt="Card image cap" />
       <Card.Body>
-        <Card.Title className='party'>Customizable Parties</Card.Title>
+        <Card.Title className='party-title'>Customizable Parties</Card.Title>
         <Card.Text className='party'>
         Vivid Vibes offers endless possibilities. Tailors your event to perfection, whether it's a themed extravaganza or an intimate gathering. Our expert planners work closely with you to bring your vision to life.
         </Card.Text>
@@ -96,7 +96,8 @@ function Parties() {
       </Card.Body>
     </Card>
 
-  </div>
+    </div>
+    
     </>
     )
 }

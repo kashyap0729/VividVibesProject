@@ -9,7 +9,7 @@ const BParty = () => {
   return (
     <div className='main'>
         <video autoPlay muted loop id="background-video">
-          <source src='https://download-video.akamaized.net/v3-1/playback/79dca332-93f5-4452-98d4-47b1035f2539/32499dce?__token__=st=1701720594~exp=1701734994~acl=%2Fv3-1%2Fplayback%2F79dca332-93f5-4452-98d4-47b1035f2539%2F32499dce%2A~hmac=e0a94044b84bf5153be1ce2138b69a2718ebd68021c06cbe9fad4db8733a2e62&r=dXMtY2VudHJhbDE%3D' type="video/mp4" />
+          <source src='https://vod-progressive.akamaized.net/exp=1701833976~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F3829%2F18%2F469147363%2F2085867777.mp4~hmac=9b600d0f73de672b3f905d9b7544ef40c621c8d47bc64be7fb3c7427baa19756/vimeo-prod-skyfire-std-us/01/3829/18/469147363/2085867777.mp4' type="video/mp4" />
         </video>
       <div className="content-b">
 

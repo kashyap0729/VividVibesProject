@@ -1,0 +1,110 @@
+/* common css for whole page and background image */
+.mar-background{
+    margin: 0;
+    padding: 0;
+    background-image: url('../../assets/mar-background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* css for heading and text */
+.mar-details{
+    padding: 10px;
+    text-align: center;
+}
+
+.mar-details h1{
+    font-weight: bold;
+    text-transform: uppercase;
+    color : #3D7363;
+    font-style: italic;
+}
+
+.mar-details p{
+    font-size: 20px;
+    justify-content: center;
+    color: #3D7363;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/*css for carousel*/
+.multi-item-carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  
+  .multi-item-carousel .carousel-item .card {
+    flex: 0 0 25%; 
+    margin-right: 10px; 
+  }
+
+  .multi-item-carousel .carousel-item .card img {
+    max-height: 200px; 
+    max-width: 280px;
+  }
+
+  div .mar-d-flex{
+    padding: 20px;
+  }
+
+  /*css for card */
+  .mar.card{
+    margin: 60px;
+    color: #F2EDD0;
+    background-color: #68A683;
+    border: none;
+  }
+
+  .carousel-control-prev{
+    padding:0;
+    margin:-8px;
+  }
+
+  .carousel-control-next{
+    padding:0;
+    margin: -25px;
+  }
+
+  /*media queries*/
+  @media (min-width: 576px) and (max-width: 768px) {
+    .mar-details h1{
+      font-size: 50px;
+    }
+
+    .mar-details p{
+      font-size: 40px;
+    }
+
+    div .mar.card {
+        margin: 40px; /* Adjust card margin */
+        width: 650px;
+        height: 400px;
+      }
+    
+      .multi-item-carousel .carousel-item .card img {
+        max-height: 250px; 
+        max-width: 700px;
+      }
+
+      div.card-title.h5{
+        font-size: 30px;
+      }
+
+      p.card-text{
+        font-size: 28px;
+      }
+    
+  }
+
+  @media (min-width: 375px) and (max-width: 576px) {
+    
+    div .mar.card {
+      margin: 20px; /* Adjust card margin */
+      width: 300px;
+    }
+  }
+
+
+  
