@@ -36,9 +36,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run client\" \"npm run server\"",
-    "client": "react-scripts start",
-    "server": "cd Backend && node server.js",
+    "start": "react-scripts start",
+    "client": "npm run start --prefix",
+    "server": "nodemon ./BackEnd/server.js",
+    "vivid":"concurrently --kill-others-on-fail \"npm run client\" \"npm run server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -63,6 +64,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2"
   }
 }
