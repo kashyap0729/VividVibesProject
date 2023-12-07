@@ -15,7 +15,8 @@ import Parties from './Component/Parties/Parties';
 import Marriages from './Component/Marriages/Marriages';
 import BParty from './Component/BParty/Bparty';
 import UsersForm from './Component/UsersForm/UsersForm';
-import Admin from './Component/Admin/Admin'
+import Admin from './Component/Admin/Admin';
+import Booking from './Component/Booking/booking';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
        <Route path="BParty" element={<BParty/>}/>  
        <Route path ="UsersForm" element={<UsersForm/>}/>
        <Route path ="Admin" element={<Admin/>}/>
+       <Route path ="booking" element={<Booking/>}/>
      </Route>
    </Routes>
     </Router>

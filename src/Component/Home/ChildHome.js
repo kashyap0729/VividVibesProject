@@ -2,6 +2,31 @@ import React from 'react';
 import { Container, Card, Button } from 'react-bootstrap';
 
 const ChildHome = () => {
+  const handleClick = (amount, e) => {
+    e.preventDefault();
+    console.log('You clicked submit.');
+
+    const url = `http://localhost:5000/payment/checkout/${amount}`;
+    fetch(url, {
+      method: 'POST', 
+      headers: {
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin": "*"
+      },
+      body: JSON.stringify({
+        items: [
+          { amount: amount}
+        ]
+      })
+    }).then(res => {
+      if(res.ok) return res.json()
+      return res.json().then(json => Promise.reject(json))
+    }).then(({url}) => {
+      window.location = url
+    }).catch(e => {
+      console.error(e.error);
+    });
+  };
   return (
     <section id="hero">
     <div className="content text-center">
@@ -39,7 +64,7 @@ const ChildHome = () => {
                 </div>
               </Card.Body>
               <Card.Footer className="bg-transparent border-0 btn-lg d-flex justify-content-center align-items-center">
-              <Button className="btn btn-success text-white rounded-pill px-5 plan-btn">Choose Plan</Button>
+              <Button onClick={(e) => handleClick(30000, e)} className="btn btn-success text-white rounded-pill px-5 plan-btn">Choose Plan</Button>
               </Card.Footer>
             </Card>
           </div>
@@ -65,7 +90,7 @@ const ChildHome = () => {
                 </div>
               </Card.Body>
               <Card.Footer className="bg-transparent border-0 btn-lg d-flex justify-content-center align-items-center">
-              <Button className="btn btn-success text-white rounded-pill px-5 plan-btn">Choose Plan</Button>
+              <Button onClick={(e) => handleClick(50000, e)} className="btn btn-success text-white rounded-pill px-5 plan-btn">Choose Plan</Button>
               </Card.Footer>
             </Card>
           </div>
@@ -91,7 +116,7 @@ const ChildHome = () => {
                 </div>
               </Card.Body>
               <Card.Footer className="bg-transparent border-0 btn-lg d-flex justify-content-center align-items-center">
-              <Button className="btn btn-success text-white rounded-pill px-5 plan-btn">Choose Plan</Button>
+              <Button onClick={(e) => handleClick(80000, e)} className="btn btn-success text-white rounded-pill px-5 plan-btn">Choose Plan</Button>
               </Card.Footer>
             </Card>
           </div>
@@ -117,7 +142,7 @@ const ChildHome = () => {
                 </div>
               </Card.Body>
               <Card.Footer className="bg-transparent border-0 btn-lg d-flex justify-content-center align-items-center">
-              <Button className="btn btn-success text-white rounded-pill px-5 plan-btn">Choose Plan</Button>
+              <Button onClick={(e) => handleClick(100000, e)} className="btn btn-success text-white rounded-pill px-5 plan-btn">Choose Plan</Button>
 
 
               </Card.Footer>
