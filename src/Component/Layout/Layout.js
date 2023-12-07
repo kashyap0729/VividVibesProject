@@ -3,6 +3,7 @@ import {
     Outlet,
   } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 
 import {
     Nav,
@@ -15,6 +16,20 @@ import './Layout.css';
 
 
 function Layout() {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const handleLogout = () => {
+        localStorage.removeItem('userSession'); // Adjust this key according to your session storage key
+        setIsLoggedIn(false);
+        // Redirect to home page or any other page after logout
+    };
+
+    // Effect to check login status on component mount and update
+    useEffect(() => {
+        const userSession = localStorage.getItem('userSession'); // Adjust this key according to your session storage key
+        if (userSession) {
+            setIsLoggedIn(true);
+        }
+    }, []);
     return(
         <>
         <Navbar collapseOnSelect bg="light" expand="lg" sticky="top" className="bg-body-tertiary">
@@ -66,9 +81,18 @@ function Layout() {
                 </div>    
                     </NavDropdown>
                     <Nav.Link as={Link} to="/OurTeam" activeClassName="active">Our Team</Nav.Link>
-                    <Nav.Link as={Link} to="/ContactUs" activeClassName="active">Contact Us</Nav.Link>
+                    {isLoggedIn ? (
+                    <>
+                      <Nav.Link as={Link} to="/UsersForm" activeClassName="active">Profile</Nav.Link>
+                      <Button variant="outline-success" onClick={handleLogout}>Logout</Button>
+                    </>
+                  ) : (
+                    <>
+                      <Nav.Link as={Link} to="/ContactUs" activeClassName="active">Contact Us</Nav.Link>
                     <Button variant="outline-success" href="/Login">Log In</Button>
-                    <Button variant="outline-success" href="/SignUpForm">Sign Up</Button>
+                      <Button variant="outline-success" href="/SignUpForm">Sign Up</Button>
+                    </>
+                  )}
                 </Nav>
             </Navbar.Collapse>
             </Container>

@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const userController = require('../controllers/users.controllers'); // adjust the path as necessary
 const adminController = require('../controllers/admin.controllers'); // adjust the path as necessary
+const paymentController = require('../controllers/payment.controller'); // adjust the path as necessary
 
 // Routes
 router.use(cors());
@@ -22,6 +23,8 @@ router.put('/admin/edit/:email', cors(), adminController.editAdmin);
 router.delete('/admin/delete/:email', adminController.deleteAdmin);
 router.get('/admin/getAll', adminController.getAllAdmins);
 router.get('/admin/get/:email', adminController.getAdminByEmail);
+
+router.post('/payment/checkout/:amount', paymentController.checkout)
 
 router.options('/admin/edit/:email', cors());
 

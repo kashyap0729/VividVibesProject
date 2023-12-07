@@ -2,13 +2,13 @@ import './Login.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Form, Button,  Row, Col } from 'react-bootstrap';
-
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('User');
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [result, setResult] = useState(null);
 
@@ -25,13 +25,20 @@ function Login() {
       : `http://localhost:5000/admin/authenticate`;
 
     const response = await axios.post(url, requestBody);
-      if (response.data.authenticated) {
-        //navigate('/home'); 
-        setResult('Login Successful');// Redirect to home page
-      } else {
-        
-        setResult('Authentication failed. Please check your credentials.'); // Set error message
+    if (response.data.authenticated) {
+      if (role === 'User') {
+        // Handle user session
+        localStorage.setItem('userSession', JSON.stringify(response.data.user));
+        navigate('/'); // Navigate to home page
+      } else if (role === 'Admin') {
+        // Handle admin session
+        localStorage.setItem('adminSession', JSON.stringify(response.data.admin));
+        navigate('/admin'); // Navigate to admin page
       }
+      setResult('Login Successful');
+    } else {
+      setResult('Authentication failed. Please check your credentials.'); // Set error message
+    }
     } catch (error) {
       // Handle errors from the server or network issues
       setResult('An error occurred while trying to authenticate. Please try again.');

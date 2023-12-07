@@ -24,7 +24,7 @@ const UserController = {
             if (!user) {
                 res.json({ authenticated: false });
             } else {
-                res.json({ authenticated: true });
+                res.json({ authenticated: true, user:user });
             }
         } catch (error) {
             res.status(500).json({ error: error.message });

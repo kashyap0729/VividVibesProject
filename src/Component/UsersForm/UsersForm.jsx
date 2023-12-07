@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,7 +14,20 @@ function UsersForm() {
   
   const [result, setResult] = useState(null);
   const [thumbnail, setThumbnail] = useState(null); // New state for thumbnail
-
+// Load user data from localStorage when the component mounts
+useEffect(() => {
+  const userData = localStorage.getItem('user');
+  if (userData) {
+    const user = JSON.parse(userData);
+    setEmail(user.email || '');
+    setFullName(user.fullname || '');
+    
+    // Set the thumbnail if there is a path or URL saved
+    if (user.profilePicture) {
+      setThumbnail(user.profilePicture); // Assuming 'profilePicture' is the key for the image
+    }
+  }
+}, []);
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -24,7 +37,7 @@ function UsersForm() {
       formData.append('password', password);
       formData.append('file', file); // Append the file to the form data
 
-      const url = 'http://localhost:5000/user/update';
+      const url = 'http://localhost:5000/user/edit';
       const response = await axios.post(url, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
@@ -44,36 +57,15 @@ function UsersForm() {
       );
     }
   };
-
-  const handleUpdate = async () => {
-    try {
-      const formData = new FormData();
-      formData.append('fullname', fullname);
-      formData.append('email', email);
-      formData.append('password', password);
-      formData.append('file', file); // Append the file to the form data
-
-      const url = 'http://localhost:5000/user/edit'; // Replace with the actual update endpoint
-      const response = await axios.put(url, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-
-      if (response.data.isSuccess) {
-        setResult('Update Successful');
-      } else {
-        setResult(
-          'An error occurred while trying to update. Please try again.'
-        );
-      }
-    } catch (error) {
-      setResult(
-        'An error occurred while trying to update. Please try again.'
-      );
-    }
+  // Function to reset the form fields
+  const handleReset = () => {
+    setEmail('');
+    setPassword('');
+    setFullName('');
+    setFile(null);
+    setThumbnail(null);
+    setResult(null);
   };
-
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
 
@@ -168,8 +160,8 @@ function UsersForm() {
           Submit
         </Button>
 
-        <Button className="custom-update-button" variant="secondary" onClick={handleUpdate}>
-          Update
+        <Button className="custom-update-button" variant="secondary" onClick={handleReset}>
+          Reset
         </Button>
       </Form>
     </>
