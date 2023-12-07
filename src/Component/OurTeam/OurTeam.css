@@ -54,7 +54,7 @@
   }
   
   .team-info p{
-    color: #f9f8f8;
+    color: #3D7363;;
     font-style: italic;
   }
   
@@ -146,3 +146,5 @@
     -o-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
   }
+
+  
