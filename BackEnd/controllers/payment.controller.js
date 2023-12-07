@@ -21,8 +21,8 @@ const PaymentController = {
                         quantity: 1
                     }
                 }),
-                success_url: `${process.env.SERVER_URL}/success.html`,
-                cancel_url: `${process.env.SERVER_URL}/cancel.html`
+                success_url: `${process.env.SERVER_URL}/successCheckout`,
+                cancel_url: `${process.env.SERVER_URL}/cancelCheckout`
             });
             res.json({url: session.url});
         } catch (e) {

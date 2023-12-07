@@ -76,6 +76,8 @@ function SignUpForm() {
 
       if (response.data.isSuccess) {
         setResult('SignUp Successful');
+        window.alert('SignUp Successful');
+        window.location="/login";
       } else {
         setResult('An error occurred while trying to authenticate. Please try again.');
       }

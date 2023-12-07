@@ -123,6 +123,31 @@ const UserController = {
             res.send({ isSuccess: false, data: { message: "Failed to send email.", error: e.message } });
 
         }
+    },
+async sendBookingMail(req, res) {
+    try {
+        const mailOptions = {
+            from: VIVIDVIBES_GMAIL_USERNAME,
+            to: req.body.email,
+            subject: "Booking Success Confirmation",
+            html: `<div><p>Hello ${req.body.fullName}, </p>
+            <p>${req.body.message}</p>
+            <br></br>
+            <p>From, Vivid Vibes Team</p></div>`
+        };
+    
+        transporter.sendMail(mailOptions, function (err, info) {
+            if (err) {
+                console.log("Error while sending an email.");
+            } else {
+                console.log("Email sent successfully!");
+            }
+        });
+        res.send({ isSuccess: true, data: { message: "Email sent successfully!" } });
+    } catch (e) {
+        res.send({ isSuccess: false, data: { message: "Failed to send email.", error: e.message } });
+
+        }
     }
 };
 
