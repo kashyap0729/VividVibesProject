@@ -38,14 +38,16 @@ function ContactUs() {
 
   return (
     <>
-      <h1>Contact Us</h1>
+      <div className='con-background'>  
       {result && (
         <p className={result.includes('successfully') ? 'success' : 'error'}>
           {result}
         </p>
       )}
       <Form className="contact" id="contactUs" onSubmit={handleOnSubmit}>
-        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        
+    <h1>Contact Us</h1>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Full Name</Form.Label>
           <Form.Control
             type="fullName"
@@ -77,6 +79,7 @@ function ContactUs() {
           Submit
         </Button>
       </Form>
+    </div>
     </>
   );
 }

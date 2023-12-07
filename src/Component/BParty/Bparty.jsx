@@ -1,9 +1,35 @@
 
 import React from 'react';
-
+import { Button } from 'react-bootstrap';
 import './BParty.css'; // Create a CSS file for styling
 import p1 from '../assests/p1.jpg';
 import p2 from '../assests/p2.jpg';
+
+const handleClick = (amount, e) => {
+  e.preventDefault();
+  console.log('You clicked submit.');
+
+  const url = `http://localhost:5000/payment/checkout/${amount}`;
+  fetch(url, {
+    method: 'POST', 
+    headers: {
+      'Content-Type': 'application/json',
+      "Access-Control-Allow-Origin": "*"
+    },
+    body: JSON.stringify({
+      items: [
+        { amount: amount}
+      ]
+    })
+  }).then(res => {
+    if(res.ok) return res.json()
+    return res.json().then(json => Promise.reject(json))
+  }).then(({url}) => {
+    window.location = url
+  }).catch(e => {
+    console.error(e.error);
+    });
+  };
 
 const BParty = () => {
   return (
@@ -16,8 +42,8 @@ const BParty = () => {
 
       </div>
       <div className="right-content-b">
-          <img className='pic' src={p1} alt="Image 1"  />
-          <img className='pic' src={p2} alt="Image 2" />
+          <img className='pic' src={p1} alt="hey1"  />
+          <img className='pic' src={p2} alt=" hey2" />
         </div>
       
       <div className="left-content-b">
@@ -28,25 +54,25 @@ const BParty = () => {
         </div>
         
         <div className="card-container">
-  <div className="card">
+  <div className="card-b">
     <h2>Christmas </h2>
     <img src="https://cdn-icons-png.flaticon.com/128/1889/1889459.png" alt=" 1" />
     <p>Snowflakes dance, a festive trance, as Christmas joy fills every glance. Hearts aglow, love bestowed, a season's magic beautifully bestowed. Merry Christmas.</p>
-    <button>More</button>
+    <Button onClick={(e) => handleClick(50000, e)} style={{ backgroundColor: '#F2EDD0', color: '#3D7363' }} className=" px-4 plan-btn">Book Now</Button>
   </div>
 
-  <div className="card">
+  <div className="card-b">
     <h2>Thanksgiving</h2>
     <img src="https://cdn-icons-png.flaticon.com/128/5960/5960101.png" alt=" 2" />
     <p>Gratitude blooms, in cozy rooms, as families gather amid autumn's tunes. A feast of thanks, where warmth transcends, a day of blessings, where love never ends.</p>
-    <button>More</button>
+    <Button onClick={(e) => handleClick(50000, e)} style={{ backgroundColor: '#F2EDD0', color: '#3D7363' }} className=" px-4 plan-btn">Book Now</Button>
   </div>
 
-  <div className="card">
+  <div className="card-b">
     <h2>New Year</h2>
     <img src="https://cdn-icons-png.flaticon.com/128/13115/13115068.png" alt=" 3" />
     <p>As the clock chimes, a new year climbs, with hope and dreams in endless lines. Resolutions rise, under midnight skies, a fresh beginning, where possibilities arise.</p>
-    <button>More</button>
+    <Button onClick={(e) => handleClick(50000, e)} style={{ backgroundColor: '#F2EDD0', color: '#3D7363' }} className=" px-4 plan-btn">Book Now</Button>
   </div>
 </div>
 

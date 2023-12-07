@@ -5,6 +5,7 @@
     background-image: url('../../assets/mar-background.jpg');
     background-size: cover;
     background-position: center;
+  
 }
 
 /* css for heading and text of page */
@@ -18,6 +19,7 @@
     text-transform: uppercase;
     color : #3D7363;
     font-style: italic;
+    margin-top: 30px;
 }
 
 .mar-details p{
@@ -33,6 +35,7 @@
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
+    
   }
   
   .multi-item-carousel .carousel-item .card {

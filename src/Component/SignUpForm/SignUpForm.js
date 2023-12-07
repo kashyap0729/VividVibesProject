@@ -50,12 +50,7 @@ function SignUpForm() {
     setErrors((prevErrors) => ({ ...prevErrors, email: '' }));
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-    // Clear the password error message on typing
-    setErrors((prevErrors) => ({ ...prevErrors, password: '' }));
-  };
-
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -87,7 +82,9 @@ function SignUpForm() {
   return (
     <>
       <div className='sign-background'>
+       
         <Form className="cmxform" onSubmit={handleSubmit}>
+        <h1>Sign Up</h1>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Full Name</Form.Label>
           <Form.Control
