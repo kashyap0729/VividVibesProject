@@ -8,7 +8,6 @@ import './UsersForm.css'; // Import the CSS file
 function UsersForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [picString, setpicString] = useState('');
   const [fullname, setFullName] = useState('');
   const [file, setFile] = useState(null); // New state for the file
 
@@ -18,8 +17,8 @@ function UsersForm() {
 
   // Load user data from localStorage when the component mounts
   useEffect(() => {
-    const userData = localStorage.getItem('user');
-    if (userData) {
+    const userData = sessionStorage.getItem('userSession');
+        if (userData) {
       const user = JSON.parse(userData);
       setEmail(user.email || '');
       setFullName(user.fullname || '');
@@ -40,22 +39,28 @@ function UsersForm() {
     }
 
     try {
-      const formData = new FormData();
-      formData.append('fullname', fullname);
-      formData.append('email', email);
-      formData.append('password', password);
-      formData.append('file', file); // Append the file to the form data
+      // Construct the requestBody with non-empty fields
+      const requestBody = {};
+      
+      if (fullname.trim() !== '') {
+        requestBody.fullname = fullname;
+      }
+  
+      if (password.trim() !== '') {
+        requestBody.password = password;
+      }
+  
+      if (thumbnail) {
+        requestBody.profilePicture = thumbnail;
+      }
 
-      const url = 'http://localhost:5000/user/edit';
-      const response = await axios.post(url, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
+      const url = `http://localhost:5000/user/edit/${email}`;
+      const response = await axios.put(url, requestBody, {});
 
       if (response.data.isSuccess) {
-        setResult('SignUp Successful');
+        setResult('Updated Successfully');
       } else {
+        console.log(thumbnail);
         setResult('An error occurred while trying to authenticate. Please try again.');
       }
     } catch (error) {
@@ -72,13 +77,6 @@ function UsersForm() {
       newErrors.fullname = 'Full Name is required';
       isValid = false;
     }
-
-    // Validate Password
-    if (!password.trim()) {
-      newErrors.password = 'Password is required';
-      isValid = false;
-    }
-
 
     setErrors(newErrors);
     return isValid;
@@ -100,6 +98,7 @@ function UsersForm() {
 
     if (selectedFile) {
       // Display image preview
+      
       const reader = new FileReader();
       reader.onloadend = () => {
         setThumbnail(reader.result);
@@ -115,6 +114,7 @@ function UsersForm() {
   const handleIconClick = () => {
     document.getElementById('fileInput').click();
   };
+  
 
   return (
     <>
@@ -169,7 +169,7 @@ function UsersForm() {
         </Form.Group>
 
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Change Password</Form.Label>
           <Form.Control
             type="password"
             placeholder="Password"
@@ -192,10 +192,6 @@ function UsersForm() {
 
         <Button className="custom-submit-button" variant="primary" type="submit">
           Submit
-        </Button>
-
-        <Button className="custom-update-button" variant="secondary" onClick={handleReset}>
-          Reset
         </Button>
       </Form>
     </>
