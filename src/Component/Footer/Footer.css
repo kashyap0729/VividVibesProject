@@ -1,3 +1,4 @@
+/* common css property*/
 *{
     font-family:'Times New Roman', Times, serif;
     box-sizing: border-box;
@@ -8,18 +9,19 @@
     padding: 5px;
     display: flex;
     justify-content: center;
-    /* margin-top: 5rem; */
     position: relative;
     bottom: 0;
     width: 100%; 
   }
 
+  /* contact icon css */
   h6{
     margin: 0;
     color: #F2EDD0;
     justify-content: center;
   }
 
+  /* css for footer part1*/
   .ft-1 a{
     margin: 0;
     padding: 0;
@@ -32,6 +34,7 @@
     text-align: justify;
   }
 
+  /*css for footer icons */
   .footer-icons i{
     padding: 0.5rem;
     color: #F2EDD0;
@@ -47,6 +50,7 @@
     cursor: pointer;
   }
 
+  /*css from footer part-2*/
   .ft-2 h4{
     color: #F2EDD0;
     margin:5px;
@@ -68,6 +72,7 @@
     
   }
 
+  /* css for footer part-3*/
   .ft-3{
     display: inline-block;
   }
