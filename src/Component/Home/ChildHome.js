@@ -4,9 +4,10 @@ import { Container, Card, Button } from 'react-bootstrap';
 
 const ChildHome = () => {
   const handleClick = (amount, e) => {
+    
     e.preventDefault();
     console.log('You clicked submit.');
-
+    if(sessionStorage.getItem('userSession')){
     const url = `http://localhost:5000/payment/checkout/${amount}`;
     fetch(url, {
       method: 'POST', 
@@ -26,8 +27,14 @@ const ChildHome = () => {
       window.location = url
     }).catch(e => {
       console.error(e.error);
-    });
-  };
+    }
+    );
+    }
+else{
+  window.alert("Please Log in");
+  window.location = "/Login";
+}
+};
   return (
     <section id="hero">
     <div className="content text-center">
