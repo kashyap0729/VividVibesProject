@@ -12,9 +12,8 @@ function ourteam(){
        <div className="container">
         <div className="row">
             <div className="col-md-12 text-center">
-               <h2 className="section-title">
-                 The Team Behind Vivid Vibes
-               </h2>
+            <h1 className="display-4 fw-bold text-center">Meet the team behind Vivid Vibes</h1>
+             
                <p className="section-subtitle">
               {message}
                </p>
@@ -118,8 +117,8 @@ function ourteam(){
                     <img src="https://www.profilebakery.com/wp-content/uploads/2023/03/AI-Profile-Picture.jpg"className="team-img" alt="pic" />
                     <h3>Sathwik Reddy</h3>
                     <div className="team-info">
-                        <p>Photographer</p>
-                        <p>Sathwik's lens doesn't just document; it tells a story. Each frame is a masterpiece, showcasing the essence and emotion of our events. </p>
+                        <p>Event Designer</p>
+                        <p>Sathwik, Professional event designer, crafts unforgettable experiences with creativity, precision, and a keen eye for detail, surpassing expectations. </p>
 
                        <ul className="team-icon">
                        <li><a href = "#" className="twitter">
