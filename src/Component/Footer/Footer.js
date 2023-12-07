@@ -9,7 +9,7 @@ const Footer = () => {
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-6 col-lg-5 col-12 ft-1'>
-                        <a className='navbar-brand' href="/">Vivid Vibes</a>
+                        <a className='navbar-brand' href='/'>Vivid Vibes</a>
                         <p>"Transforming dreams into reality, Vivid Vibes envisions creating unforgettable moments that resonate with the essence of every individual's unique celebration."
                         </p>
                         <div className='footer-icons'>
@@ -43,13 +43,16 @@ const Footer = () => {
                                 <li className='nav-item'>
                                     <a className='' href='/OurTeam'>Our Team</a>
                                 </li>
+                                <li className='nav-item'>
+                                    <a className='' href='/ContactUs'>Contact Us</a>
+                                </li>
                             </ul>
                     </div>
                     <div className='col-md-6 col-lg-4 col-12 ft-3'>
                         <h4>Contact Information</h4>
-                        <h6><i class="fa-solid fa-phone"></i>(786)-564-3902</h6>
-                        <h6><i class="fa-solid fa-envelope"></i>webdesign.vividvibes.17@gmail.com</h6>
-                        <h6><i class="fa-solid fa-location-dot"></i>Boston, United States of America</h6>
+                        <h6><i className="fa-solid fa-phone"></i>(786)-564-3902</h6>
+                        <h6><i className="fa-solid fa-envelope"></i>webdesign.vividvibes.17@gmail.com</h6>
+                        <h6><i className="fa-solid fa-location-dot"></i>Boston, United States of America</h6>
                     </div>
                 </div>
             </div>

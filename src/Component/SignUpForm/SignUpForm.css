@@ -53,3 +53,8 @@
   background-repeat: no-repeat;
   margin-top: 60px;
 }
+.red-text {
+  color: red;
+  font-size: 14px; /* Adjust font size as needed */
+  /* Add any other styling you want for the error message */
+}

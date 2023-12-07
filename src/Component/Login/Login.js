@@ -1,7 +1,7 @@
 import './Login.css';
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Form, Button,  Row, Col } from 'react-bootstrap';
+import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -11,6 +11,37 @@ function Login() {
   const navigate = useNavigate();
 
   const [result, setResult] = useState(null);
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    let valid = true;
+    const errorsCopy = {};
+
+    if (!email) {
+      errorsCopy.email = 'Email is required';
+      valid = false;
+    }
+
+    if (!password) {
+      errorsCopy.password = 'Password is required';
+      valid = false;
+    }
+
+    setErrors(errorsCopy);
+    return valid;
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    // Clear the email error message on typing
+    setErrors((prevErrors) => ({ ...prevErrors, email: '' }));
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    // Clear the password error message on typing
+    setErrors((prevErrors) => ({ ...prevErrors, password: '' }));
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -29,24 +60,21 @@ function Login() {
     if (response.data.authenticated) {
       if (role === 'User') {
         // Handle user session
-        localStorage.setItem('userSession', JSON.stringify(response.data.user));
-        navigate('/'); // Navigate to home page
+        sessionStorage.setItem('userSession', JSON.stringify(response.data.user));
+        window.location="/"; // Navigate to home page
       } else if (role === 'Admin') {
         // Handle admin session
-        localStorage.setItem('adminSession', JSON.stringify(response.data.admin));
-        navigate('/admin'); // Navigate to admin page
+        sessionStorage.setItem('adminSession', JSON.stringify(response.data.admin));
+        window.location="/admin"; // Navigate to admin page
       }
       setResult('Login Successful');
     } else {
       setResult('Authentication failed. Please check your credentials.'); // Set error message
     }
     } catch (error) {
-      // Handle errors from the server or network issues
       setResult('An error occurred while trying to authenticate. Please try again.');
-      // You can also use error.response or error.request for more detailed error handling
     }
   };
-  
 
   return (
     

@@ -4,28 +4,27 @@ import {
   } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-
 import {
     Nav,
     Navbar,
     Container,
     Button,
     NavDropdown}from 'react-bootstrap';
-
 import './Layout.css';
 
 
 function Layout() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const handleLogout = () => {
-        localStorage.removeItem('userSession'); // Adjust this key according to your session storage key
+        sessionStorage.removeItem('userSession'); // Adjust this key according to your session storage key
         setIsLoggedIn(false);
+        window.location="/";
         // Redirect to home page or any other page after logout
     };
 
     // Effect to check login status on component mount and update
     useEffect(() => {
-        const userSession = localStorage.getItem('userSession'); // Adjust this key according to your session storage key
+        const userSession = sessionStorage.getItem('userSession'); // Adjust this key according to your session storage key
         if (userSession) {
             setIsLoggedIn(true);
         }
@@ -34,7 +33,7 @@ function Layout() {
         <>
         <Navbar collapseOnSelect bg="light" expand="lg" sticky="top" className="bg-body-tertiary">
             <Container fluid>
-            <Navbar.Brand href="#">Vivid Vibes</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/">Vivid Vibes</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarSupportedContent" />
             <Navbar.Collapse id="navbarSupportedContent">
                 <Nav className="ms-auto">
