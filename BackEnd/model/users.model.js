@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
         validate:[
         {
             validator: (value) => {
-            return /^[a-zA-Z0-9._%+-]+@northeastern\.edu$/.test(value);
+            return /^\S+@\S+\.\S+$/.test(value);
             },
             message: "Only Northeastern mail id accepted",
         },

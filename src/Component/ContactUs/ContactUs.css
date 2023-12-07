@@ -1,4 +1,8 @@
-/*css for contact us form */
+.error {
+    color: red;
+    font-size: 0.875rem; /* Optional: Adjust the font size as needed */
+    margin-top: 0.25rem; /* Optional: Adjust the top margin as needed */
+  }/*css for contact us form */
 .contact{
     margin: auto;
     padding: 30px;
