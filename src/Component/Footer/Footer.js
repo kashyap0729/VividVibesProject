@@ -13,13 +13,26 @@ const Footer = () => {
                         <p>"Transforming dreams into reality, Vivid Vibes envisions creating unforgettable moments that resonate with the essence of every individual's unique celebration."
                         </p>
                         <div className='footer-icons'>
-                            <i class="fa-brands fa-facebook"></i>   
-                            <i class="fa-brands fa-twitter"></i>
-                            <i class="fa-brands fa-instagram"></i>
-                            <i class="fa-brands fa-linkedin"></i>
-                            <i class="fa-brands fa-pinterest"></i>
-                            <i class="fa-brands fa-youtube"></i>
-                        </div>
+  <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+    <i className="fab fa-facebook"></i>
+  </a>
+  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+    <i className="fab fa-twitter"></i>
+  </a>
+  <a href="https://www.instagram.com/csr_originals/" target="_blank" rel="noopener noreferrer">
+    <i className="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/kashyapmrc" target="_blank" rel="noopener noreferrer">
+    <i className="fab fa-linkedin"></i>
+  </a>
+  <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">
+    <i className="fab fa-pinterest"></i>
+  </a>
+  <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+    <i className="fab fa-youtube"></i>
+  </a>
+</div>
+
                     </div>
                     <div className='col-md-6 col-lg-3 col-12 ft-2'>
                         <h4>Quick Links</h4>
@@ -28,15 +41,15 @@ const Footer = () => {
                                     <a className='' href='/'>Home</a>
                                 </li>
                                 <li className='nav-item'>
-                                    <a className='' href='/'>Our Team</a>
+                                    <a className='' href='/OurTeam'>Our Team</a>
                                 </li>
                             </ul>
                     </div>
                     <div className='col-md-6 col-lg-4 col-12 ft-3'>
                         <h4>Contact Information</h4>
                         <h6><i class="fa-solid fa-phone"></i>(786)-564-3902</h6>
-                        <h6><i class="fa-solid fa-envelope"></i>vividvibes@gmail.com</h6>
-                        <h6><i class="fa-solid fa-location-dot"></i>Boston,USA</h6>
+                        <h6><i class="fa-solid fa-envelope"></i>webdesign.vividvibes.17@gmail.com</h6>
+                        <h6><i class="fa-solid fa-location-dot"></i>Boston, United States of America</h6>
                     </div>
                 </div>
             </div>
