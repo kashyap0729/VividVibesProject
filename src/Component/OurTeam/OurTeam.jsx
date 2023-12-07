@@ -8,7 +8,7 @@ function ourteam(){
     return(
         
       <section classname ="section-whit">
-        
+        <div className="our-background">
        <div className="container">
         <div className="row">
             <div className="col-md-12 text-center">
@@ -144,7 +144,7 @@ function ourteam(){
         </div>
 
        </div>
-     
+     </div>
       </section>
     )
 }

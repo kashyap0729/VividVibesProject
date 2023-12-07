@@ -5,7 +5,9 @@
   
   
   }
-  
+  .our-background{
+    background-image: url(../../assets/mar-background.jpg);
+  }
   .team-item{
     background: #f4f5f6;
     text-align: center;
@@ -54,8 +56,12 @@
   }
   
   .team-info p{
-    color: #3D7363;;
+    color: #3D7363;
     font-style: italic;
+  }
+
+  .team-info p:hover{
+    color: #F2EDD0;
   }
   
   .team-info::after{

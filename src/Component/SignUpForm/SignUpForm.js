@@ -9,9 +9,18 @@ function SignUpForm() {
   const [password, setPassword] = useState('');
   const [fullname, setFullName] = useState('');
   const [result, setResult] = useState(null);
+  const [errors, setErrors] = useState({
+    fullname: '',
+    email: '',
+    password: '',
+  });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+      
+    
+    
   try {
       const requestBody = {
       fullname:fullname,
@@ -19,7 +28,7 @@ function SignUpForm() {
       password: password
     };
     // Determine the URL based on the role
-    const url = `http://localhost:5000/user/create`;
+    const url = `http://localhost:5001/user/create`;
 
     const response = await axios.post(url, requestBody);
       if (response.data.isSuccess) {
@@ -35,41 +44,62 @@ function SignUpForm() {
       // You can also use error.response or error.request for more detailed error handling
     }
   };
+
   return (
     <>
-      <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicName">
-        <Form.Label>Full Name</Form.Label>
-        <Form.Control type="FullName" placeholder="FullName" 
-        value={fullname}
-        onChange={(e) => setFullName(e.target.value)}/>
-      </Form.Group>
-      
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" 
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}/>
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
+      <div className='sign-background'>
+        <Form className="cmxform" onSubmit={handleSubmit}>
+          <h1>Sign Up</h1>
+          <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Label>Full Name</Form.Label>
+            <Form.Control
+              type="FullName"
+              placeholder="FullName"
+              value={fullname}
+              onChange={(e) => setFullName(e.target.value)}
+            
+            />
+            <Form.Control.Feedback type="invalid">{errors.fullname}</Form.Control.Feedback>
+          </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" 
-        value={password}
-        onChange={(e) => setPassword(e.target.value)} />
-        <Form.Text className="text-muted">
-        {result && <div>{JSON.stringify(result)}</div>}
-        </Form.Text>
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+             
+            />
+            <Form.Control.Feedback type="invalid">{errors.email}</Form.Control.Feedback>
+            <Form.Text className="text-muted">
+              We'll never share your email with anyone else.
+            </Form.Text>
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              
+            />
+            <Form.Control.Feedback type="invalid">{errors.password}</Form.Control.Feedback>
+            <Form.Text className="text-muted">{result && <div>{JSON.stringify(result)}</div>}</Form.Text>
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
+      </div>
     </>
   );
 }
 
+
 export default SignUpForm;
+
+
+

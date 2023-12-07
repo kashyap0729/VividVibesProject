@@ -19,10 +19,11 @@ function Login() {
       email: email,
       password: password
     };
+    
     // Determine the URL based on the role
     const url = role === 'User' 
-      ? `http://localhost:5000/user/authenticate`
-      : `http://localhost:5000/admin/authenticate`;
+      ? `http://localhost:5001/user/authenticate`
+      : `http://localhost:5001/admin/authenticate`;
 
     const response = await axios.post(url, requestBody);
     if (response.data.authenticated) {
@@ -48,62 +49,70 @@ function Login() {
   
 
   return (
+    
+    <div className="page-background"> {/* Add a class or inline style for the background */}
     <Form className="cmxform" onSubmit={handleSubmit}>
-    <Form.Group as={Row} className="mb-3">
-      <Form.Label column sm={2} htmlFor="email">Email</Form.Label>
-      <Col sm={10}>
-        <Form.Control 
-          type="email" 
-          id="email" 
-          value={email}
-          onChange={(e) => setEmail(e.target.value)} 
-        />
-      </Col>
-    </Form.Group>
+      <h1>Login Form</h1>
+      <Form.Group as={Row} className="mb-3">
+        <Form.Label column sm={2} htmlFor="email">
+          Email
+        </Form.Label>
+        <Col sm={10}>
+          <Form.Control
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Col>
+      </Form.Group>
 
-    <Form.Group as={Row} className="mb-3">
-      <Form.Label column sm={2} htmlFor="password">Password</Form.Label>
-      <Col sm={10}>
-        <Form.Control 
-          type="password" 
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)} 
-        />
-      </Col>
-    </Form.Group>
+      <Form.Group as={Row} className="mb-3">
+        <Form.Label column sm={2} htmlFor="password">
+          Password
+        </Form.Label>
+        <Col sm={10}>
+          <Form.Control
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Col>
+      </Form.Group>
       <Form.Group as={Row} className="mb-3 align-items-center">
-            <Form.Label as="legend" column sm={2}>
-                Role
-            </Form.Label>
-            <Col sm={2}>
-                <Form.Check
-                    inline
-                    type="radio"
-                    label="User"
-                    name="roleRadios"
-                    id="radioUser"
-                    value="User"
-                    checked={role === 'User'}
-                   onChange={() => setRole('User')}
-                />
-                <Form.Check
-                    inline
-                    type="radio"
-                    label="Admin"
-                    name="roleRadios"
-                    id="radioAdmin"
-                    value="Admin"
-                    checked={role === 'Admin'}
-                    onChange={() => setRole('Admin')}
-                />
-            </Col>
-        </Form.Group>
+        <Form.Label as="legend" column sm={2}>
+          Role
+        </Form.Label>
+        <Col sm={4}>
+          <Form.Check
+            type="radio"
+            label="User"
+            name="roleRadios"
+            id="radioUser"
+            value="User"
+            checked={role === 'User'}
+            onChange={() => setRole('User')}
+          />
+          <Form.Check
+            type="radio"
+            label="Admin"
+            name="roleRadios"
+            id="radioAdmin"
+            value="Admin"
+            checked={role === 'Admin'}
+            onChange={() => setRole('Admin')}
+          />
+        </Col>
+      </Form.Group>
 
-    {result && <div>{JSON.stringify(result)}</div>}
+      {result && <div>{JSON.stringify(result)}</div>}
 
-    <Button type="submit" className="submit">Submit</Button>
-  </Form>
+      <Button type="submit" className="submit">
+        Submit
+      </Button>
+    </Form>
+  </div>
   );
 }
 

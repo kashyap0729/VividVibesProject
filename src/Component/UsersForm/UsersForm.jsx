@@ -16,7 +16,7 @@ function UsersForm() {
   const [thumbnail, setThumbnail] = useState(null); // New state for thumbnail
 // Load user data from localStorage when the component mounts
 useEffect(() => {
-  const userData = localStorage.getItem('user');
+  const userData = localStorage.getItem('userSession');
   if (userData) {
     const user = JSON.parse(userData);
     setEmail(user.email || '');
@@ -37,7 +37,7 @@ useEffect(() => {
       formData.append('password', password);
       formData.append('file', file); // Append the file to the form data
 
-      const url = 'http://localhost:5000/user/edit';
+      const url = 'http://localhost:5001/user/edit';
       const response = await axios.post(url, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
