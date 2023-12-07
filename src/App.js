@@ -17,6 +17,8 @@ import Marriages from './Component/Marriages/Marriages';
 import BParty from './Component/BParty/Bparty';
 import UsersForm from './Component/UsersForm/UsersForm';
 import Admin from './Component/Admin/Admin';
+import SuccessPage from './Component/SuccessPage/SuccessPage';
+import CancelPage from './Component/CancelPage/CancelPage';
 
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
        <Route path ="UsersForm" element={<UsersForm/>}/>
        <Route path ="Admin" element={<Admin/>}/>
        <Route path ="booking" element={<Booking/>}/>
+       <Route path ="successCheckout" element={<SuccessPage/>}/>
+       <Route path ="cancelCheckout" element={<CancelPage/>}/>
      </Route>
    </Routes>
     </Router>

@@ -26,6 +26,7 @@ router.get('/admin/get/:email', adminController.getAdminByEmail);
 
 router.post('/payment/checkout/:amount', paymentController.checkout)
 router.post("/user/contactUs", userController.sendQuery);
+router.post("/user/checkout", userController.sendBookingMail);
 
 router.options('/admin/edit/:email', cors());
 
