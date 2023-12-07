@@ -14,22 +14,22 @@ const Footer = () => {
                         </p>
                         <div className='footer-icons'>
   <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-    <i classNameName="fab fa-facebook"></i>
+    <i className="fab fa-facebook"></i>
   </a>
   <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-    <i classNameName="fab fa-twitter"></i>
+    <i className="fab fa-twitter"></i>
   </a>
   <a href="https://www.instagram.com/csr_originals/" target="_blank" rel="noopener noreferrer">
-    <i classNameName="fab fa-instagram"></i>
+    <i className="fab fa-instagram"></i>
   </a>
   <a href="https://www.linkedin.com/in/kashyapmrc" target="_blank" rel="noopener noreferrer">
-    <i classNameName="fab fa-linkedin"></i>
+    <i className="fab fa-linkedin"></i>
   </a>
   <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">
-    <i classNameName="fab fa-pinterest"></i>
+    <i className="fab fa-pinterest"></i>
   </a>
   <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-    <i classNameName="fab fa-youtube"></i>
+    <i className="fab fa-youtube"></i>
   </a>
 </div>
 
@@ -51,7 +51,7 @@ const Footer = () => {
                     <div className='col-md-6 col-lg-4 col-12 ft-3'>
                         <h4>Contact Information</h4>
                         <h6><i className="fa-solid fa-phone"></i>(786)-564-3902</h6>
-                        <h6><i className="fa-solid fa-envelope"></i>webdesign.webdesign.vividvibes.17.17@gmail.com</h6>
+                        <h6><i className="fa-solid fa-envelope"></i>webdesign.vividvibes.17@gmail.com</h6>
                         <h6><i className="fa-solid fa-location-dot"></i>Boston, United States of America</h6>
                     </div>
                 </div>
