@@ -37,8 +37,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "client": "npm run start --prefix",
-    "server": "nodemon ./BackEnd/server.js",
+    "client": "npm start",
+    "server": "cd BackEnd && node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
