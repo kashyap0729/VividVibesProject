@@ -7,10 +7,10 @@ import {
 import Layout from './Component/Layout/Layout';
 import Home from './Component/Home/Home'
 import OurTeam from './Component/OurTeam/OurTeam';
+import ContactUs from './Component/ContactUs/ContactUs'
 import Login from './Component/Login/Login';
 import SignUpForm from './Component/SignUpForm/SignUpForm';
 import Footer from './Component/Footer/Footer';
-//import Party from './Component/Party/Party';
 import Parties from './Component/Parties/Parties';
 import Marriages from './Component/Marriages/Marriages';
 import BParty from './Component/BParty/Bparty';
@@ -29,6 +29,7 @@ function App() {
       }>  
        <Route path="/" element={<Home/>}/>
        <Route path="OurTeam" element={<OurTeam/>}/>
+       <Route path="ContactUs" element={<ContactUs/>}/>
        <Route path="Login" element={<Login/>}/> 
        <Route path="SignUpForm" element={<SignUpForm/>}/> 
        <Route path="Parties" element={<Parties/>}/>  

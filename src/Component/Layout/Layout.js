@@ -66,6 +66,7 @@ function Layout() {
                 </div>    
                     </NavDropdown>
                     <Nav.Link as={Link} to="/OurTeam" activeClassName="active">Our Team</Nav.Link>
+                    <Nav.Link as={Link} to="/ContactUs" activeClassName="active">Contact Us</Nav.Link>
                     <Button variant="outline-success" href="/Login">Log In</Button>
                     <Button variant="outline-success" href="/SignUpForm">Sign Up</Button>
                 </Nav>
