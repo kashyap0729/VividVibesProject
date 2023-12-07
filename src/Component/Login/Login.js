@@ -53,8 +53,8 @@ function Login() {
     
     // Determine the URL based on the role
     const url = role === 'User' 
-      ? `http://localhost:5001/user/authenticate`
-      : `http://localhost:5001/admin/authenticate`;
+      ? `http://localhost:5000/user/authenticate`
+      : `http://localhost:5000/admin/authenticate`;
 
     const response = await axios.post(url, requestBody);
     if (response.data.authenticated) {
