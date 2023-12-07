@@ -34,7 +34,7 @@ function Admin() {
   };
 
   return (
-    <div >
+    <div className='admin-background'>
       <h1>Admin Dashboard</h1>
 
       {error && <p>{error}</p>}
@@ -53,7 +53,7 @@ function Admin() {
               <td>{user.fullname}</td>
               <td>{user.email}</td>
               <td>
-                <button onClick={() => handleViewUser(user.email)}>View</button>
+              
                 <button onClick={() => handleDeleteUser(user.email)}>Delete</button>
               </td>
             </tr>
