@@ -8,6 +8,9 @@
   width: 50%; /* Adjust the width as needed */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow for depth */
+  padding-top: 20px;
+  margin-top: 20px;
+  margin-bottom: 60px;
 }
 
 .cmxform label {
@@ -15,15 +18,6 @@
   margin-bottom: 10px;
 }
 
-.cmxform input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #C08261; /* Darker red border for the form inputs */
-  border-radius: 5px;
-  background-color: #ffffff; /* White background for the form inputs */
-  color: #9A3B3B; /* Dark red text color for the form inputs */
-}
 
 /* Styling for radio buttons and their labels */
 .cmxform .form-check {
@@ -52,6 +46,13 @@
   background-color: #9A3B3B !important; /* Dark red background on hover for the submit button */
 }
 
+.sign-background{
+  background-image: url('../../assets/mar-background.jpg');
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 60px;
+}
 .red-text {
   color: red;
   font-size: 14px; /* Adjust font size as needed */

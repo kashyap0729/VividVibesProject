@@ -44,38 +44,21 @@ function Layout() {
                       <div className="row">
                         <ul>
                             <li><NavDropdown.Item style={{color: '#3d7373', fontWeight:'bold'}} href="/Marriages">Marriages</NavDropdown.Item></li>
-                            <li><NavDropdown.Item style={{color: 'gray'}} href="/UsersForm">Indian Style</NavDropdown.Item></li>
-                            <li><NavDropdown.Item style={{color: 'gray'}} href="#">American Style</NavDropdown.Item></li>
-                            <li><NavDropdown.Item style={{color: 'gray'}} href="#">Misc. Style</NavDropdown.Item></li>      
                         </ul>
                         <ul>
                            <li><NavDropdown.Item style={{color: '#3d7373', fontWeight:'bold'}}  href="/BParty">Festivals</NavDropdown.Item></li>
-                           <li><NavDropdown.Item style={{color: 'gray'}} href="#">New Year Events</NavDropdown.Item></li>
-                           <li><NavDropdown.Item style={{color: 'gray'}} href="#">Easter Day</NavDropdown.Item></li>
-                           <li><NavDropdown.Item style={{color: 'gray'}} href="#">Good Friday</NavDropdown.Item></li>
-                           <li><NavDropdown.Item style={{color: 'gray'}} href="#">Haloween</NavDropdown.Item></li>
-                           <li><NavDropdown.Item style={{color: 'gray'}} href="#">Thanksgiving</NavDropdown.Item></li>
-                           <li><NavDropdown.Item style={{color: 'gray'}} href="#">Christmas</NavDropdown.Item></li>
-                        </ul>
+                          </ul>
                       </div>
                       <div className="row">
                         <ul>
                             <li><NavDropdown.Item style={{color: '#3d7373', fontWeight:'bold'}} href="/Parties">Parties</NavDropdown.Item></li>
-                            <li><NavDropdown.Item style={{color: 'gray'}} href="#">Birthday Parties</NavDropdown.Item></li>
-                            <li><NavDropdown.Item style={{color: 'gray'}} href="#">Anniversary Parties</NavDropdown.Item></li>
-                            <li><NavDropdown.Item style={{color: 'gray'}} href="#">Retirement Parties</NavDropdown.Item></li>  
-                            <li><NavDropdown.Item style={{color: 'gray'}} href="#">Customizable Parties</NavDropdown.Item></li>    
+                           
                         </ul>
                         <ul>
-                           <li><NavDropdown.Item style={{color: '#3d7373', fontWeight:'bold'}}  href="#">Indian Festivals</NavDropdown.Item></li>
-                           <li><NavDropdown.Item style={{color: 'gray'}} href="#">Diwali Events</NavDropdown.Item></li>
-                           <li><NavDropdown.Item style={{color: 'gray'}} href="#">Holi Events</NavDropdown.Item></li>
-                           <li><NavDropdown.Item style={{color: 'gray'}} href="#">Garba Eventsy</NavDropdown.Item></li>
-                           <li><NavDropdown.Item style={{color: 'gray'}} href="#">Dussehra Events</NavDropdown.Item></li>
+                           <li><NavDropdown.Item style={{color: '#3d7373', fontWeight:'bold'}}  href="/BParty">Indian Festivals</NavDropdown.Item></li>
+                          
                         </ul>
-                        <ul>
-                           <li><NavDropdown.Item style={{color: '#3d7373', fontWeight:'bold'}}  href="#">Misc. Events</NavDropdown.Item></li>
-                        </ul>
+                       
                       </div> 
                 </div>    
                     </NavDropdown>

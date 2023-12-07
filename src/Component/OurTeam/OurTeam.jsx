@@ -6,7 +6,9 @@ function ourteam(){
     let message =
     "Our event management team is a talented and dedicated group of professionals who excel \n in orchestrating seamless and  memorable experiences. Comprising event planners,  coordinators, designers, \n and logistical experts, each team member plays a crucial role in bringing events to life."
     return(
+        
       <section classname ="section-whit">
+        <div className="our-background">
        <div className="container">
         <div className="row">
             <div className="col-md-12 text-center">
@@ -142,6 +144,7 @@ function ourteam(){
         </div>
 
        </div>
+     </div>
       </section>
     )
 }

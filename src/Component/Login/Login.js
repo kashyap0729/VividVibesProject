@@ -45,20 +45,16 @@ function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
-
-    try {
-      const requestBody = {
-        email: email,
-        password: password
-      };
-
-      const url = role === 'User'
-        ? `http://localhost:5000/user/authenticate`
-        : `http://localhost:5000/admin/authenticate`;
+  try {
+    const requestBody = {
+      email: email,
+      password: password
+    };
+    
+    // Determine the URL based on the role
+    const url = role === 'User' 
+      ? `http://localhost:5000/user/authenticate`
+      : `http://localhost:5000/admin/authenticate`;
 
     const response = await axios.post(url, requestBody);
     if (response.data.authenticated) {
@@ -81,7 +77,10 @@ function Login() {
   };
 
   return (
+    
+    <div className="page-background"> {/* Add a class or inline style for the background */}
     <Form className="cmxform" onSubmit={handleSubmit}>
+      <h1>Login Form</h1>
       <Form.Group as={Row} className="mb-3">
         <Form.Label column sm={2} htmlFor="email">
           Email
@@ -91,9 +90,8 @@ function Login() {
             type="email"
             id="email"
             value={email}
-            onChange={handleEmailChange}
+            onChange={(e) => setEmail(e.target.value)}
           />
-          {errors.email && <div className="error">{errors.email}</div>}
         </Col>
       </Form.Group>
 
@@ -106,19 +104,16 @@ function Login() {
             type="password"
             id="password"
             value={password}
-            onChange={handlePasswordChange}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          {errors.password && <div className="error">{errors.password}</div>}
         </Col>
       </Form.Group>
-
       <Form.Group as={Row} className="mb-3 align-items-center">
         <Form.Label as="legend" column sm={2}>
           Role
         </Form.Label>
-        <Col sm={2}>
+        <Col sm={4}>
           <Form.Check
-            inline
             type="radio"
             label="User"
             name="roleRadios"
@@ -128,7 +123,6 @@ function Login() {
             onChange={() => setRole('User')}
           />
           <Form.Check
-            inline
             type="radio"
             label="Admin"
             name="roleRadios"
@@ -141,10 +135,12 @@ function Login() {
       </Form.Group>
 
       {result && <div>{JSON.stringify(result)}</div>}
+
       <Button type="submit" className="submit">
         Submit
       </Button>
     </Form>
+  </div>
   );
 }
 
