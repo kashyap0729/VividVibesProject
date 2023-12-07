@@ -17,7 +17,6 @@ import Marriages from './Component/Marriages/Marriages';
 import BParty from './Component/BParty/Bparty';
 import UsersForm from './Component/UsersForm/UsersForm';
 import Admin from './Component/Admin/Admin';
-import Booking from './Component/Booking/booking';
 
 function App() {
   return (

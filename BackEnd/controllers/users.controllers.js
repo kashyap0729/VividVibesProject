@@ -3,7 +3,19 @@ const UserService = require('../service/userService'); // Update the path as nec
 const successMessage = "User created successfully";
 const failureMessage = "User creation failure due to ";
 const notFoundMessage = "User not found";
+const nodemailer = require('nodemailer');
 
+const VIVIDVIBES_GMAIL_USERNAME = process.env.VIVIDVIBES_GMAIL_USERNAME;
+const VIVIDVIBES_GMAIL_PASSWORD = process.env.VIVIDVIBES_GMAIL_PASSWORD;
+
+var transporter = nodemailer.createTransport({
+    service: "gmail",
+    host:   "smtp.gmail.com",
+    auth: {
+        user: VIVIDVIBES_GMAIL_USERNAME,
+        pass: VIVIDVIBES_GMAIL_PASSWORD
+    }
+});
 const UserController = {
     async createUser(req, res) {
 
@@ -88,7 +100,30 @@ const UserController = {
         } catch (err) {
             res.status(500).send(err.message);
         }
-    }
+    },
+    async sendQuery(req, res) {
+        try {
+            const mailOptions = {
+                from: VIVIDVIBES_GMAIL_USERNAME,
+                to: VIVIDVIBES_GMAIL_USERNAME,
+                subject: "New Query Recieved",
+                html: `<div><p>From: ${req.body.email}</p><p>${req.body.message}</p><br></br>
+                <p>${req.body.fullName}</p></div>`
+            };
+        
+            transporter.sendMail(mailOptions, function (err, info) {
+                if (err) {
+                    console.log("Error while sending an email.");
+                } else {
+                    console.log("Email sent successfully!");
+                }
+            });
+            res.send({ isSuccess: true, data: { message: "Email sent successfully!" } });
+        } catch (e) {
+            res.send({ isSuccess: false, data: { message: "Failed to send email.", error: e.message } });
+
+        }
+    }
 };
 
 module.exports = UserController;
