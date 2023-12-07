@@ -80,7 +80,6 @@ function SignUpForm() {
   };
 
   return (
-    <>
       <div className='sign-background'>
        
         <Form className="cmxform" onSubmit={handleSubmit}>
@@ -110,23 +109,24 @@ function SignUpForm() {
           {errors.email && <div className="error red-text">{errors.email}</div>}
         </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" 
-        value={password}
-        onChange={(e) => setPassword(e.target.value)} />
-        <Form.Text className="text-muted">
-        {result && <div>{JSON.stringify(result)}</div>}
-        </Form.Text>
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" 
+            value={password}
+            onChange={handlePasswordChange}
+          />
+          {errors.password && <div className="error red-text">{errors.password}</div>}
+          <Form.Text className="text-muted">
+            {result && <div>{JSON.stringify(result)}</div>}
+          </Form.Text>
+        </Form.Group>
+
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
     </div>
-    </>
   );
 }
-
 
 export default SignUpForm;

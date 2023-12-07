@@ -12,6 +12,12 @@ function ContactUs() {
   const handleOnSubmit = async (event) => {
     event.preventDefault();
 
+    // Simple client-side validations
+    if (!fullName.trim() || !email.trim() || !message.trim()) {
+      setResult('Please fill in all fields.');
+      return;
+    }
+
     try {
       const requestBody = {
         fullName: fullName,
@@ -23,7 +29,8 @@ function ContactUs() {
       const response = await axios.post(url, requestBody, {});
 
       if (response.data.isSuccess) {
-        window.alert("Email Sent Successfully");
+        window.alert('Email Sent Successfully');
+        setResult('')
       } else {
         setResult(
           'An error occurred while trying to send email for inquiry. Please try again.'
@@ -39,18 +46,18 @@ function ContactUs() {
   return (
     <>
       <div className='con-background'>  
-      {result && (
-        <p className={result.includes('successfully') ? 'success' : 'error'}>
-          {result}
-        </p>
-      )}
       <Form className="contact" id="contactUs" onSubmit={handleOnSubmit}>
+        {result && (
+          <p className={result.includes('successfully') ? 'success' : 'error'}>
+            {result}
+          </p>
+        )}
         
     <h1>Contact Us</h1>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Full Name</Form.Label>
           <Form.Control
-            type="fullName"
+            type="text"
             placeholder="Enter Full Name"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
