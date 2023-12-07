@@ -49,6 +49,11 @@ function SignUpForm() {
     // Clear the email error message on typing
     setErrors((prevErrors) => ({ ...prevErrors, email: '' }));
   };
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    // Clear the password error message on typing
+    setErrors((prevErrors) => ({ ...prevErrors, password: '' }));
+  };
 
   
   const handleSubmit = async (event) => {
