@@ -52,8 +52,9 @@ else{
             <Card.Header className="bg-transparent border-0 px-2 py-0 price" style={{ fontSize: '1.3em' }}>$300</Card.Header>
               <Card.Body className="text-success">
                 <Card.Title className="Business text-center text-dark">Business Fair</Card.Title>
-                <Card.Text style={{ color: 'white' }} className="text-start fair"> For most businesses event like book fair, craft fair.
+                <Card.Text style={{ color: 'white' }} className="text-start fair"> For most businesses event like book fair, craft fair worksss.
                 </Card.Text>
+                
               </Card.Body>
               <Card.Body className="text-success p-2">
                 <div className="row d-flex justify-content-center align-items-center">
