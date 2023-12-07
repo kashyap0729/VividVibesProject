@@ -62,7 +62,7 @@ return(
       </Button>
     </Form>
     </>
-)
+  );
 }
 
 export default ContactUs;

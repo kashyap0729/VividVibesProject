@@ -11,25 +11,34 @@ function UsersForm() {
   const [picString, setpicString] = useState('');
   const [fullname, setFullName] = useState('');
   const [file, setFile] = useState(null); // New state for the file
-  
+
   const [result, setResult] = useState(null);
   const [thumbnail, setThumbnail] = useState(null); // New state for thumbnail
-// Load user data from localStorage when the component mounts
-useEffect(() => {
-  const userData = localStorage.getItem('user');
-  if (userData) {
-    const user = JSON.parse(userData);
-    setEmail(user.email || '');
-    setFullName(user.fullname || '');
-    
-    // Set the thumbnail if there is a path or URL saved
-    if (user.profilePicture) {
-      setThumbnail(user.profilePicture); // Assuming 'profilePicture' is the key for the image
+  const [errors, setErrors] = useState({});
+
+  // Load user data from localStorage when the component mounts
+  useEffect(() => {
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      const user = JSON.parse(userData);
+      setEmail(user.email || '');
+      setFullName(user.fullname || '');
+
+      // Set the thumbnail if there is a path or URL saved
+      if (user.profilePicture) {
+        setThumbnail(user.profilePicture); // Assuming 'profilePicture' is the key for the image
+      }
     }
-  }
-}, []);
+  }, []);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Validate the form before submitting
+    if (!validateForm()) {
+      return;
+    }
+
     try {
       const formData = new FormData();
       formData.append('fullname', fullname);
@@ -47,16 +56,34 @@ useEffect(() => {
       if (response.data.isSuccess) {
         setResult('SignUp Successful');
       } else {
-        setResult(
-          'An error occurred while trying to authenticate. Please try again.'
-        );
+        setResult('An error occurred while trying to authenticate. Please try again.');
       }
     } catch (error) {
-      setResult(
-        'An error occurred while trying to authenticate. Please try again.'
-      );
+      setResult('An error occurred while trying to authenticate. Please try again.');
     }
   };
+
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = {};
+
+    // Validate Full Name
+    if (!fullname.trim()) {
+      newErrors.fullname = 'Full Name is required';
+      isValid = false;
+    }
+
+    // Validate Password
+    if (!password.trim()) {
+      newErrors.password = 'Password is required';
+      isValid = false;
+    }
+
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
   // Function to reset the form fields
   const handleReset = () => {
     setEmail('');
@@ -65,7 +92,9 @@ useEffect(() => {
     setFile(null);
     setThumbnail(null);
     setResult(null);
+    setErrors({});
   };
+
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
 
@@ -99,7 +128,6 @@ useEffect(() => {
               <img src={thumbnail} alt="Profile Thumbnail" className="thumbnail" />
             ) : (
               <>
-                {/* <FontAwesomeIcon icon={faCamera} size="4x" /> */}
                 <div className="camera-icon">
                   <FontAwesomeIcon icon={faUser} size="3x" />
                 </div>
@@ -121,9 +149,9 @@ useEffect(() => {
             type="FullName"
             placeholder="FullName"
             value={fullname}
-            
             onChange={(e) => setFullName(e.target.value)}
           />
+          {errors.fullname && <div className="error">{errors.fullname}</div>}
         </Form.Group>
 
         <Form.Group controlId="formBasicEmail">
@@ -148,6 +176,7 @@ useEffect(() => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          {errors.password && <div className="error">{errors.password}</div>}
         </Form.Group>
 
         <Form.Group controlId="formBasicResult">
@@ -155,6 +184,11 @@ useEffect(() => {
             {result && <div>{JSON.stringify(result)}</div>}
           </Form.Text>
         </Form.Group>
+
+        {/* Display validation errors for Profile Picture */}
+        <div className="error-message">
+          {errors.file && <div>{errors.file}</div>}
+        </div>
 
         <Button className="custom-submit-button" variant="primary" type="submit">
           Submit
@@ -169,7 +203,3 @@ useEffect(() => {
 }
 
 export default UsersForm;
-
-
-
-
