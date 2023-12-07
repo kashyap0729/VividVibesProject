@@ -45,102 +45,108 @@ function Login() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  try {
-    const requestBody = {
-      email: email,
-      password: password
-    };
-    
-    // Determine the URL based on the role
-    const url = role === 'User' 
-      ? `http://localhost:5000/user/authenticate`
-      : `http://localhost:5000/admin/authenticate`;
 
-    const response = await axios.post(url, requestBody);
-    if (response.data.authenticated) {
-      if (role === 'User') {
-        // Handle user session
-        sessionStorage.setItem('userSession', JSON.stringify(response.data.user));
-        window.location="/"; // Navigate to home page
-      } else if (role === 'Admin') {
-        // Handle admin session
-        sessionStorage.setItem('adminSession', JSON.stringify(response.data.admin));
-        window.location="/admin"; // Navigate to admin page
-      }
-      setResult('Login Successful');
-    } else {
-      setResult('Authentication failed. Please check your credentials.'); // Set error message
+    if (!validateForm()) {
+      return;
     }
+
+    try {
+      const requestBody = {
+        email: email,
+        password: password
+      };
+
+      // Determine the URL based on the role
+      const url = role === 'User'
+        ? `http://localhost:5000/user/authenticate`
+        : `http://localhost:5000/admin/authenticate`;
+
+      const response = await axios.post(url, requestBody);
+      if (response.data.authenticated) {
+        if (role === 'User') {
+          // Handle user session
+          sessionStorage.setItem('userSession', JSON.stringify(response.data.user));
+          window.location = "/"; // Navigate to home page
+        } else if (role === 'Admin') {
+          // Handle admin session
+          sessionStorage.setItem('adminSession', JSON.stringify(response.data.admin));
+          window.location = "/admin"; // Navigate to admin page
+        }
+        setResult('Login Successful');
+      } else {
+        setResult('Authentication failed. Please check your credentials.'); // Set error message
+      }
     } catch (error) {
       setResult('An error occurred while trying to authenticate. Please try again.');
     }
   };
 
   return (
-    
-    <div className="page-background"> {/* Add a class or inline style for the background */}
-    <Form className="cmxform" onSubmit={handleSubmit}>
-      <h1>Login Form</h1>
-      <Form.Group as={Row} className="mb-3">
-        <Form.Label column sm={2} htmlFor="email">
-          Email
-        </Form.Label>
-        <Col sm={10}>
-          <Form.Control
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Col>
-      </Form.Group>
+    <div className="page-background">
+      <Form className="cmxform" onSubmit={handleSubmit}>
+        <h1>Login Form</h1>
+        <Form.Group as={Row} className="mb-3">
+          <Form.Label column sm={2} htmlFor="email">
+            Email
+          </Form.Label>
+          <Col sm={10}>
+            <Form.Control
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => handleEmailChange(e)}
+            />
+            {errors.email && <div className="error-message">{errors.email}</div>}
+          </Col>
+        </Form.Group>
 
-      <Form.Group as={Row} className="mb-3">
-        <Form.Label column sm={2} htmlFor="password">
-          Password
-        </Form.Label>
-        <Col sm={10}>
-          <Form.Control
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Col>
-      </Form.Group>
-      <Form.Group as={Row} className="mb-3 align-items-center">
-        <Form.Label as="legend" column sm={2}>
-          Role
-        </Form.Label>
-        <Col sm={4}>
-          <Form.Check
-            type="radio"
-            label="User"
-            name="roleRadios"
-            id="radioUser"
-            value="User"
-            checked={role === 'User'}
-            onChange={() => setRole('User')}
-          />
-          <Form.Check
-            type="radio"
-            label="Admin"
-            name="roleRadios"
-            id="radioAdmin"
-            value="Admin"
-            checked={role === 'Admin'}
-            onChange={() => setRole('Admin')}
-          />
-        </Col>
-      </Form.Group>
+        <Form.Group as={Row} className="mb-3">
+          <Form.Label column sm={2} htmlFor="password">
+            Password
+          </Form.Label>
+          <Col sm={10}>
+            <Form.Control
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => handlePasswordChange(e)}
+            />
+            {errors.password && <div className="error-message">{errors.password}</div>}
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row} className="mb-3 align-items-center">
+          <Form.Label as="legend" column sm={2}>
+            Role
+          </Form.Label>
+          <Col sm={4}>
+            <Form.Check
+              type="radio"
+              label="User"
+              name="roleRadios"
+              id="radioUser"
+              value="User"
+              checked={role === 'User'}
+              onChange={() => setRole('User')}
+            />
+            <Form.Check
+              type="radio"
+              label="Admin"
+              name="roleRadios"
+              id="radioAdmin"
+              value="Admin"
+              checked={role === 'Admin'}
+              onChange={() => setRole('Admin')}
+            />
+          </Col>
+        </Form.Group>
 
-      {result && <div>{JSON.stringify(result)}</div>}
+        {result && <div>{JSON.stringify(result)}</div>}
 
-      <Button type="submit" className="submit">
-        Submit
-      </Button>
-    </Form>
-  </div>
+        <Button type="submit" className="submit">
+          Submit
+        </Button>
+      </Form>
+    </div>
   );
 }
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faCamera } from '@fortawesome/free-solid-svg-icons'; // Import camera icon
+import { faUser } from '@fortawesome/free-solid-svg-icons'; // Import camera icon
 import './UsersForm.css'; // Import the CSS file
 
 function UsersForm() {
@@ -82,16 +82,7 @@ function UsersForm() {
     return isValid;
   };
 
-  // Function to reset the form fields
-  const handleReset = () => {
-    setEmail('');
-    setPassword('');
-    setFullName('');
-    setFile(null);
-    setThumbnail(null);
-    setResult(null);
-    setErrors({});
-  };
+
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
@@ -118,9 +109,9 @@ function UsersForm() {
 
   return (
     <>
-      <h1 className='heading'>Users Update</h1>
-
+      <div className='user-background'>
       <Form onSubmit={handleSubmit} className="custom-container">
+      <h1 className='heading'>Users Update</h1>
         <Form.Group controlId="formBasicProfilePicture">
           <Form.Label>Profile Picture</Form.Label>
           <div className="profile-picture-container" onClick={handleIconClick}>
@@ -194,6 +185,7 @@ function UsersForm() {
           Submit
         </Button>
       </Form>
+      </div>
     </>
   );
 }

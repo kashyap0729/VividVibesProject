@@ -57,7 +57,7 @@
   align-items: center;
 }
 
-.card {
+.card-b {
   flex: 1; 
   background-color: #68A683;
   padding: 20px;
@@ -65,20 +65,20 @@
   text-align: center;
 }
 
-.card img {
+.card-b img {
   max-width: 80%;
   max-height: 50px; 
   margin-bottom: 10px;
 }
 
 
-.card h2 {
+.card-b h2 {
   font-size: 1.5rem; 
   margin-bottom: 5px;
 }
 
 
-.card button {
+.card-b button {
   background-color: #f5f8f7;
   color: #000000;
   padding: 6px 8px;
@@ -89,7 +89,7 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-.card button:hover {
+.card-b button:hover {
   background-color: #F2EDD0;
   color: black;
 }

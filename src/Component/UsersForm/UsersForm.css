@@ -2,12 +2,13 @@
     background-color: #F2ECBE; /* Light beige background for the form */
   color: #9A3B3B; /* Dark red text color for the form */
   padding: 20px;
-  margin: auto;
+  /* margin: auto; */
   width: 50%; /* Adjust the width as needed */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   padding-bottom: 40px;
   margin-bottom: 40px;
+  margin-top: 40px;
 }
 .heading{
     text-align: center;
@@ -70,7 +71,13 @@
     font-size: 24px;
   }
   
-  
+  .user-background{
+    background-image: url('../../assets/mar-background.jpg');
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 60px;
+  }
   
 
 

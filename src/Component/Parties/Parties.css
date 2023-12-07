@@ -81,7 +81,7 @@ div.card-container1{
 
 div.party-top.card-component-1.card{
     width:36rem;
-    background-color: #68A683;
+    background-color: #F2EDD0;
     border: none;
 }
 
@@ -95,14 +95,14 @@ img.card-img-top.party-top{
     font-size: 25px;
     font-weight: bold;
     text-transform: uppercase;
-    color:#F2EDD0;
+    color:#3D7363;
 }
 
 p.party.card-text{
     font-size: 20px;
     justify-content: center;
     text-align: justify;
-    color: #F2EDD0;  
+    color: #3D7363;  
 }
 
 @media (min-width: 576px) and (max-width: 768px) {

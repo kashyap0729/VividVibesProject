@@ -14,6 +14,33 @@ const ExampleCarouselImage = ({ imageUrl, altText }) => (
     <img className="d-block w-100" src={imageUrl} alt={altText} />
 );
   
+
+const handleClick = (amount, e) => {
+  e.preventDefault();
+  console.log('You clicked submit.');
+
+  const url = `http://localhost:5000/payment/checkout/${amount}`;
+  fetch(url, {
+    method: 'POST', 
+    headers: {
+      'Content-Type': 'application/json',
+      "Access-Control-Allow-Origin": "*"
+    },
+    body: JSON.stringify({
+      items: [
+        { amount: amount}
+      ]
+    })
+  }).then(res => {
+    if(res.ok) return res.json()
+    return res.json().then(json => Promise.reject(json))
+  }).then(({url}) => {
+    window.location = url
+  }).catch(e => {
+    console.error(e.error);
+    });
+  };
+
 function Parties() {
     return(
         <>
@@ -60,7 +87,7 @@ function Parties() {
             <Card.Text className='party'>
             Elevate your birthday celebrations with Vivid Vibes! Our expert event management team turns your vision into reality, crafting unforgettable and personalized birthday parties that leave a lasting impression.
             </Card.Text>
-            <Button variant="primary">Book Now</Button>
+            <Button onClick={(e) => handleClick(20000, e)} style={{ backgroundColor: '#68A683', color: '#F2EDD0' }} className=" px-4 plan-btn">Book Now</Button>
           </Card.Body>
         </Card>
     <Card className='party-top card-component-1'>
@@ -70,7 +97,7 @@ function Parties() {
         <Card.Text className='party'>
         Celebrate love and milestones with Vivid Vibes! Transform your anniversaries into cherished memories with our dedicated event management team, specializing in crafting unique and romantic experiences tailored to your preferences.
         </Card.Text>
-        <Button variant="primary">Book Now</Button>
+        <Button onClick={(e) => handleClick(20000, e)} style={{ backgroundColor: '#68A683', color: '#F2EDD0' }} className=" px-4 plan-btn">Book Now</Button>
       </Card.Body>
     </Card>
 
@@ -81,7 +108,7 @@ function Parties() {
         <Card.Text className='party'>
         Bid farewell in style with Vivid Vibes!. Let us create a memorable and heartwarming event as you embark on this new chapter. Our team ensures a personalized touch to honor the retiree and create an unforgettable celebration.
         </Card.Text>
-        <Button variant="primary">Book Now</Button>
+        <Button onClick={(e) => handleClick(20000, e)} style={{ backgroundColor: '#68A683', color: '#F2EDD0' }} className=" px-4 plan-btn">Book Now</Button>
       </Card.Body>
     </Card>
 
@@ -92,7 +119,7 @@ function Parties() {
         <Card.Text className='party'>
         Vivid Vibes offers endless possibilities. Tailors your event to perfection, whether it's a themed extravaganza or an intimate gathering. Our expert planners work closely with you to bring your vision to life.
         </Card.Text>
-        <Button variant="primary">Book Now</Button>
+            <Button onClick={(e) => handleClick(20000, e)} style={{ backgroundColor: '#68A683', color: '#F2EDD0' }} className=" px-4 plan-btn">Book Now</Button>
       </Card.Body>
     </Card>
 
