@@ -28,12 +28,12 @@ function Login() {
     if (response.data.authenticated) {
       if (role === 'User') {
         // Handle user session
-        localStorage.setItem('userSession', JSON.stringify(response.data.user));
-        navigate('/'); // Navigate to home page
+        sessionStorage.setItem('userSession', JSON.stringify(response.data.user));
+        window.location="/"; // Navigate to home page
       } else if (role === 'Admin') {
         // Handle admin session
-        localStorage.setItem('adminSession', JSON.stringify(response.data.admin));
-        navigate('/admin'); // Navigate to admin page
+        sessionStorage.setItem('adminSession', JSON.stringify(response.data.admin));
+        window.location="/admin"; // Navigate to admin page
       }
       setResult('Login Successful');
     } else {

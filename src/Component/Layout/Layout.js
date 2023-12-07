@@ -18,14 +18,15 @@ import './Layout.css';
 function Layout() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const handleLogout = () => {
-        localStorage.removeItem('userSession'); // Adjust this key according to your session storage key
+        sessionStorage.removeItem('userSession'); // Adjust this key according to your session storage key
         setIsLoggedIn(false);
+        window.location="/";
         // Redirect to home page or any other page after logout
     };
 
     // Effect to check login status on component mount and update
     useEffect(() => {
-        const userSession = localStorage.getItem('userSession'); // Adjust this key according to your session storage key
+        const userSession = sessionStorage.getItem('userSession'); // Adjust this key according to your session storage key
         if (userSession) {
             setIsLoggedIn(true);
         }
