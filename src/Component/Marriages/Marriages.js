@@ -22,23 +22,23 @@ const Marriages = () => {
         <div className="mar-d-flex">
           <Card className='mar'>
             <Card.Img variant="top" className='mar' src={marriage1} />
-            <Card.Body>
-              <Card.Title>Engagement</Card.Title>
-              <Card.Text>Some text about card 1.</Card.Text>
+            <Card.Body className='mar-body'>
+              <Card.Title className='mar-title'>Engagement</Card.Title>
+              <Card.Text>We create seamless and personalized engagement celebrations, handling everything from venue selection to decor, allowing couples to enjoy a stress-free and joyous start to their wedding journey.</Card.Text>
             </Card.Body>
           </Card>
           <Card className='mar'>
             <Card.Img variant="top" src={marriage2} />
             <Card.Body>
               <Card.Title>Wedding Decorations</Card.Title>
-              <Card.Text>Some text about card 2.</Card.Text>
+              <Card.Text>Elevate your wedding with our company's exquisite decoration services. From enchanting floral arrangements to personalized themes, we transform venues into captivating spaces for your special day.</Card.Text>
             </Card.Body>
           </Card>
           <Card className='mar'>
             <Card.Img variant="top" src={marriage3} />
             <Card.Body>
               <Card.Title>Reception</Card.Title>
-              <Card.Text>Some text about card 3.</Card.Text>
+              <Card.Text>We curate an unforgettable reception that reflects your style and love story. We ensure a joyous celebration where every detail is meticulously crafted for lasting memories for happily ever after.</Card.Text>
             </Card.Body>
           </Card>
         </div>
