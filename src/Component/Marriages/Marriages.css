@@ -7,7 +7,7 @@
     background-position: center;
 }
 
-/* css for heading and text */
+/* css for heading and text of page */
 .mar-details{
     padding: 10px;
     text-align: center;
@@ -62,15 +62,18 @@
     border: none;
   }
   
-  mar-title.card-title.h5{
-      font-size: 25px;;
+  .mar-body.card-body{
+    width : 280px;
   }
 
-  p.card-text{
+  .mar-title.card-title.h5{
+      font-size: 28px;;
+  }
+
+  p.mar-text.card-text{
     text-align: justify;
+    font-size: 18px;
   }
-
- 
 
   /*css for card carousel*/
   .carousel-control-prev{
@@ -93,32 +96,74 @@
       font-size: 40px;
     }
 
-    div .mar.card {
-        margin: 40px; /* Adjust card margin */
+    div .mar-d-flex{
+      margin:20px;
+    }
+    .mar.card {
+        margin: 0px; /* Adjust card margin */
         width: 650px;
-        height: 400px;
+        height: 590px;
+        margin-bottom: 30px;
       }
     
+      .mar-body.card-body{
+        width:600px;
+      }
+
+      img.card-img-top.mar{
+        width: 600px;
+      }
+
       .multi-item-carousel .carousel-item .card img {
         max-height: 250px; 
         max-width: 700px;
-      }
-
-      div.card-title.h5{
-        font-size: 30px;
       }
 
       p.card-text{
         font-size: 28px;
       }
     
+      .mar-title.card-title.h5{
+        font-size: 40px;
+      }
+
+      p.mar-text.card-text{
+        font-size: 30px;
+      }
   }
 
   @media (min-width: 375px) and (max-width: 576px) {
-    
     div .mar.card {
       margin: 20px; /* Adjust card margin */
       width: 300px;
+    }
+
+    .multi-item-carousel.carousel.slide{
+      height: 1700px;
+    }
+
+    .mar-f-flex{
+      padding: 0px;
+      margin : 0px;
+    }
+
+    div.carousel-item{
+      padding: 0px;
+      margin-left: -30px;
+    }
+
+    .mar.card{
+      width: 1000px;
+      padding: 20px; 
+    }
+
+    img.card-img-top.mar{
+      width: 270px;
+    }
+
+    .carousel-inner{
+      width: 400px;
+      height: 1700px;
     }
   }
 

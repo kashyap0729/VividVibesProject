@@ -21,12 +21,14 @@ div{
     height: auto;
 }
 
+/* navbar css */
 .navbar{
     list-style: inline;
     background-color: #68A683;  
     padding: 0;
 }
 
+/*navabar css for menu items */
 .navbar-nav{
     color: #F2EDD0;
     align-items: center;
@@ -48,6 +50,7 @@ div{
     padding: 10px;
 }
 
+/*css for menu item links*/
 .nav-link{
    color: #F2EDD0;
    margin-right: 10px;

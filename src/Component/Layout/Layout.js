@@ -4,14 +4,12 @@ import {
   } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
-
 import {
     Nav,
     Navbar,
     Container,
     Button,
     NavDropdown}from 'react-bootstrap';
-
 import './Layout.css';
 
 
@@ -35,7 +33,7 @@ function Layout() {
         <>
         <Navbar collapseOnSelect bg="light" expand="lg" sticky="top" className="bg-body-tertiary">
             <Container fluid>
-            <Navbar.Brand href="#">Vivid Vibes</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/">Vivid Vibes</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarSupportedContent" />
             <Navbar.Collapse id="navbarSupportedContent">
                 <Nav className="ms-auto">

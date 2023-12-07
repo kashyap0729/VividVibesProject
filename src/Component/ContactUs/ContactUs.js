@@ -37,7 +37,8 @@ function ContactUs() {
 
 return(
     <>
-    <Form id="contactUs" onSubmit={handleOnSubmit} className='contact'>
+    <h1>Contact Us</h1>
+    <Form className='contact' id="contactUs" onSubmit={handleOnSubmit}>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Full Name</Form.Label>
         <Form.Control type="fullName" placeholder="Enter Full Name"
@@ -56,7 +57,7 @@ return(
          value={message}
          onChange={(e) => setMessage(e.target.value)}/>
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className='btn-contact'>
         Submit
       </Button>
     </Form>
