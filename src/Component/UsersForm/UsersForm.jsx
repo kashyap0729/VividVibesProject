@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Form, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faCamera } from '@fortawesome/free-solid-svg-icons'; // Import camera icon
+import { faUser } from '@fortawesome/free-solid-svg-icons'; // Import camera icon
 import './UsersForm.css'; // Import the CSS file
 
 function UsersForm() {
@@ -82,16 +82,7 @@ function UsersForm() {
     return isValid;
   };
 
-  // Function to reset the form fields
-  const handleReset = () => {
-    setEmail('');
-    setPassword('');
-    setFullName('');
-    setFile(null);
-    setThumbnail(null);
-    setResult(null);
-    setErrors({});
-  };
+ 
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];

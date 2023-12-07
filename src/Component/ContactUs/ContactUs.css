@@ -11,6 +11,8 @@
     background-color: #F2ECBE;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 /*media query css for smaller screens of size between 375px and 576px*/
@@ -42,4 +44,12 @@
         font-size: 30px;
     }
 
+}
+
+.con-background{
+    background-image: url('../../assets/mar-background.jpg');
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 60px;
 }

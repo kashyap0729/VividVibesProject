@@ -12,7 +12,7 @@ function ourteam(){
        <div className="container">
         <div className="row">
             <div className="col-md-12 text-center">
-            <h1 className="display-4 fw-bold text-center">Meet the team behind Vivid Vibes</h1>
+            <h1 className="display-4 fw-bold text-center ">Meet the team behind Vivid Vibes</h1>
              
                <p className="section-subtitle">
               {message}
@@ -25,7 +25,7 @@ function ourteam(){
                     <img src="https://www.profilebakery.com/wp-content/uploads/2023/04/AI-Profile-Picture.jpg"className="team-img" alt="pic" />
                     <h3>VIDHI PATEL</h3>
                     <div className="team-info">
-                        <p>Head of CEO</p>
+                        <p>CEO</p>
                         <p>Vidhi is our co-founder and has developed search strategies for a variety of clients from international brands to medium sized businesses for over years.</p>
 
                        <ul className="team-icon">
@@ -56,8 +56,8 @@ function ourteam(){
                     <img src="https://www.profilebakery.com/wp-content/uploads/2023/04/LINKEDIN-Profile-Picture-AI.jpg"className="team-img" alt="pic" />
                     <h3>Kashyap Ramachandra</h3>
                     <div className="team-info">
-                        <p>Event Manager</p>
-                        <p>Kashyap, our esteemed Event Manager, is the driving force behind the seamless execution of our most memorable events.</p>
+                        <p>CTO</p>
+                        <p>Kashyap, our esteemed CTO, is the driving force behind the seamless execution of our most memorable events.</p>
 
                        <ul className="team-icon">
                        <li><a href = "#" className="twitter">
